@@ -6,9 +6,6 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
-import java.util.Collections;
-import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
 
 import static io.sk.kafka.utils.KafkaProperiesUtil.FIRST_TOPIC;

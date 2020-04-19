@@ -24,7 +24,7 @@ public class ProducerDemoWithKeys {
         String msg = "message-";
         String key = "key-";
         while(++i<100) {
-            ProducerRecord<String, String> producerRecord = new ProducerRecord(FIRST_TOPIC, key+i, msg+i);
+            ProducerRecord<String, String> producerRecord = new ProducerRecord(KafkaProperiesUtil.FIRST_TOPIC, key+i, msg+i);
 
             kafkaProducer.send(producerRecord, new ProducerDemoCallback()).get();//don;t do get, this get is future get
         }

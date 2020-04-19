@@ -2,13 +2,13 @@ package io.sk.kafka.tutorial1;
 
 import io.sk.kafka.utils.KafkaProperiesUtil;
 import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
+
+import static io.sk.kafka.utils.KafkaProperiesUtil.FIRST_TOPIC;
 
 public class ProducerDemo {
     private final static Logger logger = LoggerFactory.getLogger(ProducerDemo.class);
@@ -17,11 +17,11 @@ public class ProducerDemo {
 
         Properties properties = KafkaProperiesUtil.getProduerProperties();
         //connect to to cluster
-        KafkaProducer<String,String> kafkaProducer = new KafkaProducer<String, String>(properties);
+        KafkaProducer<String,String> kafkaProducer = new KafkaProducer(properties);
         //send messages
         int i = 0;
         while(i<1000){
-            ProducerRecord<String,String> producerRecord = new ProducerRecord<String, String>("firsttopic", "message-"+i++);
+            ProducerRecord<String,String> producerRecord = new ProducerRecord(KafkaProperiesUtil.FIRST_TOPIC, "message-"+i++);
             kafkaProducer.send(producerRecord, new ProducerDemoCallback());
         }
 

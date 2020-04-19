@@ -1,0 +1,1 @@
+This tutorial has connection consuming streams from twitter with a specific term then push them to a topic
