@@ -14,14 +14,14 @@ import java.util.Properties;
 
 import static io.sk.kafka.utils.KafkaProperiesUtil.FIRST_TOPIC;
 
-public class ConsumerDempAssignAndSeek {
-    private static final Logger logger = LoggerFactory.getLogger(ConsumerDempAssignAndSeek.class);
+public class ConsumerDemoAssignAndSeek {
+    private static final Logger logger = LoggerFactory.getLogger(ConsumerDemoAssignAndSeek.class);
     public static void main(String[] args) {
         Properties properties = KafkaProperiesUtil.getConsumerProperties();
         KafkaConsumer<String,String> kafkaConsumer = new KafkaConsumer<>(properties);
 
         //assign to a topic partition than subscribing
-        TopicPartition topicPartition = new TopicPartition(FIRST_TOPIC,0);
+        TopicPartition topicPartition = new TopicPartition(KafkaProperiesUtil.FIRST_TOPIC,0);
         long offToReadFrom = 15L; // reads from offset 15
         kafkaConsumer.assign(Arrays.asList(topicPartition));
 

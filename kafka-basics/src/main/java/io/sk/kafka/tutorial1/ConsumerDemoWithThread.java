@@ -28,7 +28,7 @@ public class ConsumerDemoWithThread implements Runnable {
     public void run() {
         try{
             kafkaConsumer = new KafkaConsumer(KafkaProperiesUtil.getConsumerProperties());
-            kafkaConsumer.subscribe(Collections.singleton(FIRST_TOPIC));
+            kafkaConsumer.subscribe(Collections.singleton(KafkaProperiesUtil.FIRST_TOPIC));
             while (true){
                 ConsumerRecords<String,String> records = kafkaConsumer.poll(Duration.ofMillis(100));
                 records.forEach(rec ->logger.info(
