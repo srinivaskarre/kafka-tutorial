@@ -23,6 +23,8 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 
 import static io.sk.kafka.utils.KafkaProperiesUtil.TWITTER_TWEETS;
 

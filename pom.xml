@@ -26,6 +26,7 @@
         <module>kafka-basics</module>
         <module>kafka-twitter-producer</module>
         <module>kafka-streams</module>
+        <module>ignite-tutorial</module>
     </modules>
 
 
